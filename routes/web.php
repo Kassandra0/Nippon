@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,6 @@ Route::get('/Contact', function () {
 Route::get('/mentions-legales', function () {
     return view('mention');
 })->name('mention');
+
+Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send.email');
+

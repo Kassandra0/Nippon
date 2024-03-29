@@ -15,12 +15,18 @@
                 <p>06.11.24.30.61</p><br><br>
             </div>
             <div class="right-div">
-
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <h2 class="title2">Contactez-nous</h2><br>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                
+                <form action="{{ route('send.email') }}" method="POST" id="emailForm">
+                    @csrf
                     <div class="form-group">
-                        <label for="nom">Nom <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="nom" name="nom" required>
+                        <label for="name">Nom <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="name" name="name" required>
                     </div><br>
                     <div class="form-group">
                         <label for="email">Adresse e-mail <span class="text-danger">*</span></label>
@@ -30,41 +36,8 @@
                         <label for="message">Message <span class="text-danger">*</span></label>
                         <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                     </div><br>
-                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Envoyer</button>
                 </form>
-            
-                <?php
-                // Vérifier si le formulaire a été soumis
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    // Récupération des données du formulaire
-                    $nom = $_POST['nom'];
-                    $prenom = $_POST['prenom'];
-                    $tel = $_POST['tel'];
-                    $email = $_POST['email'];
-                    $sujet = $_POST['sujet'];
-                    $message = $_POST['message'];
-            
-                    // Adresse e-mail de destination
-                    $to = "kassandra88@live.fr";
-                    // Sujet de l'e-mail
-                    $subject = "[Nippon Kempo] Demande de renseignement";
-                    // Corps de l'e-mail
-                    $body = "Nom: $nom\n\n";
-                    $body = "Prenom: $nom\n\n";
-                    $body .= "Téléphone: $tel\n\n";
-                    $body .= "E-mail: $email\n\n";
-                    $body .= "Sujet: $sujet\n\n";
-                    $body .= "Message:\n$message";
-            
-                    // Envoi de l'e-mail
-                    if (mail($to, $subject, $body)) {
-                        echo "Votre message a été envoyé avec succès.";
-                    } else {
-                        echo "Une erreur s'est produite lors de l'envoi du message.";
-                    }
-                }
-                ?>
-
             </div>
         </div>
     </div>
@@ -115,5 +88,31 @@
     }
     
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById('emailForm'); // Id du formulaire
+        const submitBtn = document.getElementById('submitBtn'); // Id du bouton d'envoi
+        const originalText = submitBtn.innerText; // Texte original du bouton
+
+        form.addEventListener('submit', function() {
+            submitBtn.innerText = 'Envoi en cours...'; // Changement du texte du bouton pendant l'envoi
+        });
+
+        // Réactive le texte du bouton lors de la fin de l'envoi (simulé ici avec un délai de 3 secondes)
+        form.addEventListener('submit', function() {
+            setTimeout(function() {
+                submitBtn.innerText = originalText;
+            }, 3000);
+        });
+
+        form.addEventListener('submit', function() {
+            submitBtn.disabled = true; // Désactive le bouton d'envoi
+        });
+    });
+
+
+</script>
+
 
 @endsection

@@ -68,8 +68,8 @@
         <p>Site crée par Kassandra DEMAZIERE</p>
         <ul>
             <li><a href="{{ route('mention') }}">Mentions légales</a></li>
-            <li><a href="https://www.facebook.com/budokan.jeanmenil.5">Facebook</a></li>
-            <li><a href="{{ route('contact') }}">Contact</a></li>
+            <li><a href="https://www.facebook.com/budokan.jeanmenil.5" target="_blank">Facebook</a></li>
+            <li><a href="{{ route('contact') }}" target="_blank">Contact</a></li>
         </ul>
     </div>
 </footer>
