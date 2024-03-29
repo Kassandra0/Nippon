@@ -3,9 +3,9 @@
 @section('content')
 
 <section class="premier-bloc">
-    <div class="container"> <br>
-        <h2 class="title1">Calendrier</h2><br />
-        <table class="table table-bordered table-striped table-hover table-light">
+    <div class="container">
+        <h2 class="title2">Calendrier</h2><br>
+        <table class="table table-bordered table-striped table-hover table-dark">
             <tbody>
                 <tr>
                     <td>Samedi 9 Septembre 2023</td>
@@ -68,22 +68,31 @@
 </section>
 
 <style>
-    .premier-bloc {
-        background-color: #222f3e;
+
+.premier-bloc{
+        background-color: #222f3e;        
+        color:#fff;
+        padding:30px;
+        display:flex;
+        flex-wrap:wrap;
     }
 
-    .title1 {
+    .container {
         text-align: center;
-        color: white;
-        text-shadow: 0.1em 0.1em 0.2em black;
+        background-color : lightgray;
+        color: black;
+        border-style: outset;
+        border-style: double;
+        border-width: thick;
+        border-color: #121146;
+        border-radius: 15px;
+
+    }
+    
+    .title2 {
+        font-size: 2em;;
     }
 
-    .table{
-        border-style: outset;
-        border-width: thick;
-        border-color: black;
-        border-radius: 15px;
-    }
 </style>
 
 @endsection

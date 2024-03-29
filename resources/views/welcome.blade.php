@@ -71,9 +71,9 @@
             <p>9h30 à 11h30/12h</p>
         </div>
     </div>
-    <div class="d-grid gap-2 contact">
+    <!--<div class="d-grid gap-2 contact">
         <a href="{{ route('contact') }}" class="btn btn-primary lien-contact" type="button">Contact</a>
-    </div>
+    </div>-->
 </section>
 
 <style>

@@ -63,49 +63,87 @@
 </body>
 
 <footer>
-    <p>&copy;Copyright Budokan Jeanmenil. All Rights Reserved | Site crée par Kassandra Demaziere</p>
-    <div class="social-media">
-        <a href="mailto:nipponkempo03@gmail.com ?subject=[Renseignement]">
-            <p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question" viewBox="0 0 16 16">
-                    <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
-                </svg>
-            </p>
-        </a>
-        <a href="https://www.facebook.com/budokan.jeanmenil.5">
-            <p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-                </svg>
-            </p>
-        </a>
+    <div class="footer-container">
+        <p>&copy; 2023-2024 Budokan Jeanmenil. Tous droits réservés.</p>
+        <p>Site crée par Kassandra DEMAZIERE</p>
+        <ul>
+            <li><a href="{{ route('mention') }}">Mentions légales</a></li>
+            <li><a href="https://www.facebook.com/budokan.jeanmenil.5">Facebook</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
+        </ul>
     </div>
 </footer>
 
 </html>
 
 <style>
-/*Footer*/
-footer {
-    background-color: #18212b;
-    padding: 30px;
-    color: #fff;
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: space-between;
-}
 
-footer .social-media{
-    display: flex;
-}
+    /*Navbar*/
+    .navbar-light .navbar-nav .nav-link {
+        color: black !important;
+    }
 
-footer .social-media p{
-    margin-right: 15px;
-    border: 1px solid white;
-    border-radius: 100%;
-    padding: 5px;
-    text-align: center;
-    width: 40px;
-    cursor: pointer;
-}
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        background-color: #fbfcfd;
+    }
+
+    .dropdown-menu-dark .dropdown-item:focus, .dropdown-menu-dark .dropdown-item:hover {
+        background-color: lightgray;
+    }
+
+    .dropdown-menu-dark .dropdown-item {
+        color: #222f3e;
+    }
+
+
+    /*Footer*/
+    footer {
+        background-color: #fbfcfd;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    footer p {
+        margin-bottom: 10px;
+        color: black;
+    }
+
+    footer ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    footer li {
+        display: inline;
+        margin: 0 10px;
+    }
+
+    footer a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
 </style>
+
+
+<script>
+    // Fonction pour bloquer le clic droit sur le site
+
+    //function bloqueClicDroit(event) {
+        // Annule l'action par défaut du clic droit
+        //event.preventDefault();
+    //}
+
+    // Écouteur d'événements pour détecter le clic droit
+    //document.addEventListener("contextmenu", bloqueClicDroit);
+</script>

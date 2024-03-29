@@ -40,3 +40,7 @@ Route::get('/Calendrier', function () {
 Route::get('/Contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/mentions-legales', function () {
+    return view('mention');
+})->name('mention');
