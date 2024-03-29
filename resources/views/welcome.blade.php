@@ -72,28 +72,18 @@
         </div>
     </div>
     <div class="d-grid gap-2 contact">
-        <a href="#" class="btn btn-primary lien-contact" type="button">Contact</a>
+        <a href="{{ route('contact') }}" class="btn btn-primary lien-contact" type="button">Contact</a>
     </div>
 </section>
 
 <style>
-    /*Page*/
-    html{
-        scroll-behavior:smooth;
-    }
-
-    body{
-        margin: 0;
-        padding:0;
-        font-family: 'Raleway', sans-serif;
-    }
 
     /*Top page*/
     .top-page{
-        height:50vh;
+        height: 50vh;
         background-image: url('/image/top-page(1).png');
         background-size: cover;
-        text-align:center;
+        text-align: center;
         color: white;
     }
 
@@ -110,9 +100,9 @@
     .premier-bloc{
         background-color: #222f3e;
         color:#fff;
-        padding:25px;
-        display:flex;
-        flex-wrap:wrap;
+        padding: 25px;
+        display: flex;
+        flex-wrap: wrap;
     }
     
     .row {
@@ -146,7 +136,7 @@
         background-color: #999999;
         border-radius: 50%;
         display: inline-block;
-        transition: background-color 0.6s ease;
+        transition: 0.6s ease;
     }
 
     .active, .dot:hover {
@@ -161,22 +151,22 @@
         font-size: 2em;;
     }
     .informations{
-        padding:30px;
+        padding: 30px;
         background-color: lightgray;
-        background-position:center;
+        background-position: center;
         color:#fff;
     }
 
     .informations h1, .informations p{
-        text-align:center;
+        text-align: center;
     }
 
     .informations .informations-details{
         margin-top: 30px;
-        display:flex;
-        flex-wrap:wrap;
-        align-items:center;
-        justify-content:center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
     }
 
     .informations .carte,
@@ -184,7 +174,7 @@
     .informations .lieu{
         background-color:#fff;
         color:#000;
-        padding:20px;
+        padding: 20px;
         margin-right: 30px;
         margin-bottom: 20px;
         text-align: center;
@@ -211,7 +201,7 @@
         padding: 30px;
         color: #fff;
         display: flex;
-        flex-wrap:wrap;
+        flex-wrap: wrap;
         justify-content: space-between;
     }
 
@@ -224,9 +214,9 @@
         border: 1px solid #fff;
         border-radius: 100%;
         padding: 5px;
-        text-align:center;
+        text-align: center;
         width: 30px;
-        cursor:pointer;
+        cursor: pointer;
     }
 
     .navbar .icon {

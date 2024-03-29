@@ -29,7 +29,7 @@
 </section>
 
 <style>
-    /*Premier bloc = histoire */
+
     .premier-bloc{
         background-color: #222f3e;        
         color:#fff;
@@ -54,7 +54,6 @@
         font-size: 2em;;
     }
 
-    /*Image histoire*/
     .img-container {
         display: flex;
         align-items: center;
